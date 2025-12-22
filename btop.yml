@@ -1,0 +1,22 @@
+- name: Install Epel
+  hosts: localhost
+  become: yes
+  
+  tasks :
+    - name : Installation
+      package:
+        name: epel-release
+        state: present
+
+    - name: Enable and Start Service
+      service:
+        state: Started
+        enabled: true
+
+
+    - name : Install Btop
+      package:
+        name:  btop
+        state: present
+
+

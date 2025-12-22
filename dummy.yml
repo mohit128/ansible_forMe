@@ -1,0 +1,6 @@
+- name: Hello Ansible
+  hosts: localhost
+
+  tasks:
+  - name : Test connectivity
+    ping :

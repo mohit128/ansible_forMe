@@ -1,0 +1,8 @@
+- name: Showing Os info
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Os info Dispaly
+      ansible.builtin.debug:
+        msg: "Running on hostname {{ansible_hostname}} on {{ansible_distribution}} version {{ansible_distribution_version}} of family {{ansible_os_family}}"

@@ -1,0 +1,9 @@
+- name: Remove btop
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: remove package btop
+      package:
+        name: btop
+        state: absent

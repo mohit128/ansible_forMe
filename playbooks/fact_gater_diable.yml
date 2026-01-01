@@ -1,0 +1,9 @@
+- name: Disable fact gathering
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Facts Gathering enable ni hai 
+      ansible.builtin.debug:
+        msg: "No Gathering used in this playbook"

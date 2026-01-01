@@ -1,0 +1,25 @@
+- name: Install btop on Redhat Family Os
+  hosts: all
+  become: yes
+ 
+
+  tasks:
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Check epel-release
+      ansible.builtin.dnf:
+        name: epel-release
+        state: present
+      when: "'epel-release' not in ansible_facts.packages"
+
+    - name : Check Redhat
+      ansible.builtin.debug:
+        msg : "Running VM family is {{ansible_os_family}}"
+
+    - name: Install btop
+      ansible.builtin.dnf:
+        name: btop
+        state: present
+      when: "ansible_os_family == 'RedHat' "

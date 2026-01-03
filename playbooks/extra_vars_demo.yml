@@ -1,0 +1,51 @@
+- name: Nginx Check
+  hosts: all
+  become: yes
+  
+  vars_files:
+    - vars.yml
+  
+  tasks:
+   - name: Gather  Facts
+     ansible.builtin.package_facts:
+      manager: auto
+  
+   - name: Firewall Service
+     ansible.builtin.service_facts:
+
+   - debug:
+      msg: "Firewall Chl rha hai"
+     when: "'firewalld.service' in ansible_facts.services"
+
+   - name: Firewall Check
+     command: firewall-cmd --list-all
+     register: fw_output
+     when: "ngnport == 80"
+     ignore_errors: yes
+     
+   - name: Show Firewall Output
+     debug:
+      msg: "{{fw_output.stdout | default('Firewall skip ho rha hai koi value na hone ki wajah se')}}"
+     
+   - name: Add port 80 to firewall permanently
+     ansible.builtin.command: firewall-cmd --add-port=80/tcp --permanent
+     register: fw_output
+     when: "ngnport == 80"
+
+   - name: Reload firewalld
+     ansible.builtin.command: firewall-cmd --reload
+     when: "ngnport == 80"
+
+   - debug:
+      msg: "{{fw_output.stdout | default('Firewall skip ho rha hai koi value na hone ki wajah se')}}"
+
+   - name: Installation Check
+     package:
+      name: "{{pkg}}"
+      state: present
+     when: "ngnport == 80"
+
+   - name: Status Check
+     debug:
+      msg: "{{pkg}} is present with {{version}}"
+     when: "version is defined"

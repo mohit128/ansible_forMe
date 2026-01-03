@@ -1,0 +1,13 @@
+- name: Uptime Output show
+  hosts: all
+  
+
+
+  tasks:
+    - name: Taking Uptime
+      command: uptime
+      register: uptime_out
+
+    - name: Show Output Of Uptime
+      ansible.builtin.debug:
+        msg: "Server {{ansible_hostname}} and '{{uptime_out.stdout}}' aj ka Uptime"

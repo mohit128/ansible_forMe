@@ -1,2 +1,3 @@
-user_name: "ansible"
-group_name: "ansible_group"
+ngnport: 80
+pkg: "nginx"
+version: "{{ansible_facts.packages['nginx'][0].version}}"

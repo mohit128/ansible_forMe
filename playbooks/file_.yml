@@ -1,1 +1,35 @@
-c
+- name: Aj file html ki create krna hai
+  hosts: all
+  become: yes
+
+  tasks:
+    
+    - name: Path Exist
+      ansible.builtin.stat:
+        path: /var/www/html
+      register: path_exist
+    - ansible.builtin.debug:
+        msg: "{{path_exist.stat.exists | default('path bna hi ni')}}"
+
+
+    - name: Create html directory
+      ansible.builtin.file:
+        path: /var/www/html
+        state: directory
+        owner: nginx 
+        group: nginx
+        mode: '0755'
+        recurse: yes
+      when: not path_exist.stat.exists
+
+    - name: Permission  and Ownership Check
+      ansible.builtin.file:
+        path: /var/www/html
+        owner: nginx
+        group: nginx
+        mode: '0755'
+      register: perm_check
+    
+    - ansible.builtin.debug:
+        msg: S"Permission or Ownership Correct hai"
+      when: perm_check.changed == false or perm_check.stat.pw_name == 'nginx' or perm_check.stat.grp_name == 'nginx'

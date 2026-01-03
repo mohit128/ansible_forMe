@@ -49,3 +49,9 @@
      debug:
       msg: "{{pkg}} is present with {{version}}"
      when: "version is defined"
+
+   - name: Uninstallation Check
+     ansible.builtin.package:
+      name: "{{pkg}}"
+      state: absent
+     when: "ngnport == 80"

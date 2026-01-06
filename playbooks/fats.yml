@@ -1,0 +1,10 @@
+- name: Random facts Check
+  hosts: all
+  become: yes
+  
+
+  tasks:
+    
+    - name: Hostname and Ip
+      debug:
+        msg: "Here is server hostname {{ansible_hostname}}  and ip is {{ansible_all_ipv4_addresses}}"

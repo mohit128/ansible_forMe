@@ -1,0 +1,45 @@
+- name: Prime Check
+  hosts: localhost
+  gather_facts: no
+  become: no
+ 
+  vars:
+   Prime: [2,3,4,5,6,7,8,9,10]
+
+  tasks:
+
+    - name: Prime out of given list
+      shell: |
+       echo {{item}} | awk '
+
+       { 
+        n=$1; c=0;
+        for(i=1;i<=n;i++) if(n%i==0) c++;
+
+        if(c==2) print n
+       
+       }' >> /tmp/prime.txt
+      loop: "{{Prime}}"
+      changed_when: false
+      
+    
+    - name: Show Prime Numbers
+      ansible.builtin.command: cat /tmp/prime.txt
+      register: prime_output
+      
+
+    - ansible.builtin.debug:
+        msg: "Prime Numbers are : {{ prime_output.stdout_lines | default('Koi prime number ni mila') }}"
+
+    
+    - name: Clean up prime file
+      ansible.builtin.command: truncate -s 0 /tmp/prime.txt
+      changed_when: false
+      
+      
+      
+
+
+      
+      
+       

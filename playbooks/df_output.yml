@@ -1,0 +1,15 @@
+- name: Disk Usage
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Fetching disk data
+      ansible.builtin.shell: |
+        df -h /home/mparmar | awk 'NR==2 {print $5}'
+        df -h / | awk 'NR==2 {print $5}'
+      register: disk_par
+
+    - ansible.builtin.debug:
+        msg: |
+         Home Usage : {{ disk_par.stdout_lines[0] | default('Ni hai data') }}
+         Root Usage : {{ disk_par.stdout_lines[1] | default('Ni hai data') }}

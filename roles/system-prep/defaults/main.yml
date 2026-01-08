@@ -1,0 +1,5 @@
+---
+# defaults file for system-prep
+admin_user: mahesh
+home_dir: /home/mahesh
+ssh_dir: /home/mahesh/.ssh

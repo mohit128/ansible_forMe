@@ -1,7 +1,7 @@
 - name: Prime Check
   hosts: localhost
   gather_facts: no
-  become: no
+  become: yes
  
   vars:
    Prime: [2,3,4,5,6,7,8,9,10]

@@ -1,0 +1,20 @@
+---
+# tasks file for system-prep
+- name: User_check
+  ansible.builtin.stat:
+   path: "{{home_dir}}"
+  register: usr_chk 
+
+- name: User creation
+  user:
+    name: "{{admin_user}}"
+    state: present
+    group: wheel
+    create_home: yes
+  when: not usr_chk.stat.exists
+  
+- ansible.builtin.debug:
+    msg: "User is {{admin_user}} on {{ansible_hostname}} ip is {{ansible_all_ipv4_addresses}}"
+  when: usr_chk.stat.exists
+  changed_when: false
+  

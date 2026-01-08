@@ -1,0 +1,9 @@
+---
+- hosts: web
+  remote_user: root
+  roles:
+    - system-prep
+  
+  vars_files:
+    - ../vars/main.yml  
+    - ../defaults/main.yml

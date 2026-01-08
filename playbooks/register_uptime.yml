@@ -1,6 +1,6 @@
 - name: Uptime Output show
   hosts: all
-  
+  become: yes
 
 
   tasks:

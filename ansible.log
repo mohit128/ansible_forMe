@@ -1,0 +1,82 @@
+2026-01-07 16:46:36,862 p=10777 u=mparmar n=ansible | - Role system-prep was created successfully
+2026-01-07 17:27:26,494 p=27461 u=mparmar n=ansible | ERROR! the playbook: test.yml could not be found
+2026-01-07 17:28:49,986 p=28053 u=mparmar n=ansible | ERROR! the playbook: test.yml could not be found
+2026-01-07 17:44:12,448 p=34231 u=mparmar n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2026-01-07 17:44:12,449 p=34231 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 17:44:12,449 p=34231 u=mparmar n=ansible | skipping: no hosts matched
+2026-01-07 17:44:12,449 p=34231 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 17:56:01,890 p=38453 u=mparmar n=ansible | [WARNING]: Unable to parse /home/mparmar/ansible/roles/system-prep/tests/i as an inventory source
+
+2026-01-07 17:56:01,890 p=38453 u=mparmar n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-01-07 17:56:01,893 p=38453 u=mparmar n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-01-07 17:56:01,970 p=38453 u=mparmar n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2026-01-07 17:56:01,971 p=38453 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 17:56:01,971 p=38453 u=mparmar n=ansible | skipping: no hosts matched
+2026-01-07 17:56:01,971 p=38453 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 17:56:07,234 p=38512 u=mparmar n=ansible | [WARNING]: Unable to parse /home/mparmar/ansible/roles/system-prep/tests/in as an inventory source
+
+2026-01-07 17:56:07,234 p=38512 u=mparmar n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-01-07 17:56:07,237 p=38512 u=mparmar n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-01-07 17:56:07,313 p=38512 u=mparmar n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2026-01-07 17:56:07,313 p=38512 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 17:56:07,314 p=38512 u=mparmar n=ansible | skipping: no hosts matched
+2026-01-07 17:56:07,314 p=38512 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 17:56:14,903 p=38577 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 17:56:14,948 p=38577 u=mparmar n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************
+2026-01-07 17:56:16,638 p=38577 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 17:56:16,641 p=38577 u=mparmar n=ansible | TASK [system-prep : User_check] **************************************************************************************************************************
+2026-01-07 17:56:17,109 p=38577 u=mparmar n=ansible | fatal: [192.168.122.250]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (ansible.builtin.stat) module: owner. Supported parameters include: checksum_algorithm, follow, get_attributes, get_checksum, get_mime, path (attr, attributes, checksum, checksum_algo, dest, mime, mime-type, mime_type, name)."}
+2026-01-07 17:56:17,110 p=38577 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 17:56:17,110 p=38577 u=mparmar n=ansible | 192.168.122.250            : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-07 17:58:18,882 p=39439 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 17:58:18,889 p=39439 u=mparmar n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************
+2026-01-07 17:58:20,486 p=39439 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 17:58:20,507 p=39439 u=mparmar n=ansible | TASK [system-prep : User_check] **************************************************************************************************************************
+2026-01-07 17:58:20,954 p=39439 u=mparmar n=ansible | fatal: [192.168.122.250]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (ansible.builtin.stat) module: owner. Supported parameters include: checksum_algorithm, follow, get_attributes, get_checksum, get_mime, path (attr, attributes, checksum, checksum_algo, dest, mime, mime-type, mime_type, name)."}
+2026-01-07 17:58:20,955 p=39439 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 17:58:20,955 p=39439 u=mparmar n=ansible | 192.168.122.250            : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-07 17:59:32,915 p=39970 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 17:59:32,922 p=39970 u=mparmar n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************
+2026-01-07 17:59:34,552 p=39970 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 17:59:34,573 p=39970 u=mparmar n=ansible | TASK [system-prep : User_check] **************************************************************************************************************************
+2026-01-07 17:59:35,030 p=39970 u=mparmar n=ansible | fatal: [192.168.122.250]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (ansible.builtin.stat) module: owner. Supported parameters include: checksum_algorithm, follow, get_attributes, get_checksum, get_mime, path (attr, attributes, checksum, checksum_algo, dest, mime, mime-type, mime_type, name)."}
+2026-01-07 17:59:35,030 p=39970 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 17:59:35,031 p=39970 u=mparmar n=ansible | 192.168.122.250            : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-07 18:01:15,315 p=40707 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 18:01:15,322 p=40707 u=mparmar n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************
+2026-01-07 18:01:16,980 p=40707 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 18:01:17,000 p=40707 u=mparmar n=ansible | TASK [system-prep : User_check] **************************************************************************************************************************
+2026-01-07 18:01:17,459 p=40707 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 18:01:17,464 p=40707 u=mparmar n=ansible | TASK [system-prep : User creation] ***********************************************************************************************************************
+2026-01-07 18:01:17,475 p=40707 u=mparmar n=ansible | fatal: [192.168.122.250]: FAILED! => {"msg": "The conditional check 'not usr_chk.exists' failed. The error was: error while evaluating conditional (not usr_chk.exists): 'dict object' has no attribute 'exists'. 'dict object' has no attribute 'exists'\n\nThe error appears to be in '/home/mparmar/ansible/roles/system-prep/tasks/main.yml': line 8, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: User creation\n  ^ here\n"}
+2026-01-07 18:01:17,476 p=40707 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 18:01:17,476 p=40707 u=mparmar n=ansible | 192.168.122.250            : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-07 18:01:46,636 p=40948 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 18:01:46,643 p=40948 u=mparmar n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************
+2026-01-07 18:01:47,928 p=40948 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 18:01:47,950 p=40948 u=mparmar n=ansible | TASK [system-prep : User_check] **************************************************************************************************************************
+2026-01-07 18:01:48,416 p=40948 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 18:01:48,421 p=40948 u=mparmar n=ansible | TASK [system-prep : User creation] ***********************************************************************************************************************
+2026-01-07 18:01:49,071 p=40948 u=mparmar n=ansible | changed: [192.168.122.250]
+2026-01-07 18:01:49,077 p=40948 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 18:01:49,077 p=40948 u=mparmar n=ansible | 192.168.122.250            : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-07 18:08:05,334 p=43405 u=mparmar n=ansible | PLAY [web] ***********************************************************************************************************************************************
+2026-01-07 18:08:05,341 p=43405 u=mparmar n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************
+2026-01-07 18:08:06,985 p=43405 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 18:08:06,988 p=43405 u=mparmar n=ansible | TASK [system-prep : User_check] **************************************************************************************************************************
+2026-01-07 18:08:07,472 p=43405 u=mparmar n=ansible | ok: [192.168.122.250]
+2026-01-07 18:08:07,477 p=43405 u=mparmar n=ansible | TASK [system-prep : User creation] ***********************************************************************************************************************
+2026-01-07 18:08:07,489 p=43405 u=mparmar n=ansible | skipping: [192.168.122.250]
+2026-01-07 18:08:07,495 p=43405 u=mparmar n=ansible | TASK [system-prep : ansible.builtin.debug] ***************************************************************************************************************
+2026-01-07 18:08:07,511 p=43405 u=mparmar n=ansible | ok: [192.168.122.250] => {
+    "msg": "User is mahesh on localhost ip is ['192.168.122.250']"
+}
+2026-01-07 18:08:07,517 p=43405 u=mparmar n=ansible | PLAY RECAP ***********************************************************************************************************************************************
+2026-01-07 18:08:07,517 p=43405 u=mparmar n=ansible | 192.168.122.250            : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
